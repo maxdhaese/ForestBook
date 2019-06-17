@@ -1,0 +1,4 @@
+package entities.plant_entities;
+
+public enum Leaftype {
+}
