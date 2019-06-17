@@ -41,6 +41,6 @@ public class Omnivore extends Animal {
 
     @Override
     public String toString() {
-        return "Omnivore: " + getName() + " Properties: -height: " + getHeight() + "m weight: " + getWeight() + "kg length: " + getLength() + "\n\t\t PlantDiet: " + getPlantDiet() + "\n\t\t MaxfoodSize: " + getMaxFoodSize();
+        return "Omnivore: " + getName() + " Properties: -height: " + getHeight() + "m weight: " + getWeight() + "kg length: " + getLength() + "m\n\t\t PlantDiet: " + getPlantDiet() + "\n\t\t MaxfoodSize: " + getMaxFoodSize();
     }
 }
