@@ -6,7 +6,6 @@ import entities.animal_entities.Herbivore;
 import entities.animal_entities.Omnivore;
 import entities.plant_entities.Plant;
 
-import java.sql.SQLOutput;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
