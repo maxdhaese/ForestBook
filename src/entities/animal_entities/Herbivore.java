@@ -25,10 +25,12 @@ public class Herbivore extends Animal {
     }
 
     public void addPlantToDiet(Plant plant){
+        plantDiet.add(plant);
 
     }
 
     public void printDiet(){
+        plantDiet.forEach(System.out::println);
 
     }
 
