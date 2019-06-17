@@ -22,8 +22,6 @@ public class Flower extends Plant {
 
     @Override
     public String toString() {
-        return "Flower{" +
-                "smell=" + smell +
-                '}';
+        return "Flower: " + getName() + "\n\t\t Height: " + getHeight() + " Scent: " + getSmell();
     }
 }

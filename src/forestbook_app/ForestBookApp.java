@@ -11,10 +11,12 @@ import java.util.Set;
 
 public class ForestBookApp {
     public static void main(String[] args) {
-
+        //create an object of ForestbookClass
         ForestNotebook forestNotebook = new ForestNotebook();
 
+        //create different Plant objects
         Weed nettle = new Weed("Nettle", 0.5);
+        nettle.setArea(1);
         Tree oak = new Tree("Oak", 20);
         oak.setLeaftype(Leaftype.HAND);
         Flower rose = new Flower("Rose", 0.4);
@@ -25,30 +27,25 @@ public class ForestBookApp {
         Tree hazel = new Tree("Hazel", 20);
         hazel.setLeaftype(Leaftype.ROUND);
 
+        //add the plants to the forestNotebook
+        forestNotebook.addPlant(nettle);
+        forestNotebook.addPlant(oak);
+        forestNotebook.addPlant(rose);
+        forestNotebook.addPlant(burr);
+        forestNotebook.addPlant(hazel);
 
-//        forestNotebook.addPlant(nettle);
-//        forestNotebook.addPlant(oak);
-//        forestNotebook.addPlant(rose);
-//        forestNotebook.addPlant(burr);
-//        forestNotebook.addPlant(hazel);
-
-        Set<Plant> plantDietList = new HashSet<>();
-        plantDietList.add(burr);
-        plantDietList.add(nettle);
-        plantDietList.add(hazel);
-
-
+        //create objects of Animal
         Omnivore blackbear = new Omnivore("BlackBear", 200, 2.5, 2);
         blackbear.setMaxFoodSize(3);
-        blackbear.setPlantDiet(plantDietList);
+        blackbear.addPlantToDiet(hazel);
 
         Omnivore brownbear = new Omnivore("BrownBear", 120, 180, 1.90);
         brownbear.setMaxFoodSize(2);
-        brownbear.setPlantDiet(plantDietList);
+        brownbear.addPlantToDiet(burr);
 
         Omnivore coyote = new Omnivore("Coyote", 60, 80, 1.40);
         coyote.setMaxFoodSize(1);
-        coyote.setPlantDiet(plantDietList);
+        coyote.addPlantToDiet(nettle);
 
         Carnivore wolf = new Carnivore("Wolf", 70, 1, 1.8);
         wolf.setMaxFoodSize(1);
@@ -60,14 +57,15 @@ public class ForestBookApp {
         tiger.setMaxFoodSize(2);
 
         Herbivore elephant = new Herbivore("Elephant", 500, 3, 3.5);
-        elephant.setPlantDiet(plantDietList);
+        elephant.addPlantToDiet(hazel);
 
         Herbivore giraffe = new Herbivore("Giraffe", 350, 5, 4);
-        giraffe.setPlantDiet(plantDietList);
+        giraffe.addPlantToDiet(hazel);
 
         Herbivore deer = new Herbivore("Deer", 90, 1.50, 2);
-        deer.setPlantDiet(plantDietList);
+        deer.addPlantToDiet(burr);
 
+        //add the animals to the forestNotebook
         forestNotebook.addAnimal(blackbear);
         forestNotebook.addAnimal(brownbear);
         forestNotebook.addAnimal(coyote);
@@ -78,7 +76,35 @@ public class ForestBookApp {
         forestNotebook.addAnimal(giraffe);
         forestNotebook.addAnimal(deer);
 
+        //print out the amount of plants and animals we saw
+        System.out.println("Number of Animals counted: " + forestNotebook.getAnimalCount() + "\nNumber of Plants counted: " + forestNotebook.getPlantCount());
+
+        //print the complete list of animals and plants
         forestNotebook.printNoteBook();
+
+        System.out.println(" ");
+
+        //print the Lists of animal classes separately
+        System.out.println("-------Carnivores---------");
+        forestNotebook.getCarnivores().forEach(System.out::println);
+        System.out.println("-------Herbivores---------");
+        forestNotebook.getHerbivores().forEach(System.out::println);
+        System.out.println("-------Omnivores----------");
+        forestNotebook.getOmnivores().forEach(System.out::println);
+
+        System.out.println(" ");
+
+        System.out.println("Sorted by name: ");
+        forestNotebook.sortAnimalsByName();
+        forestNotebook.sortPlantsByName();
+        forestNotebook.printNoteBook();
+
+        System.out.println(" ");
+
+        System.out.println("Sorted by height: ");
+
+
+
 
 
 
