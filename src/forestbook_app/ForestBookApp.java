@@ -39,11 +39,11 @@ public class ForestBookApp {
         blackbear.setMaxFoodSize(3);
         blackbear.addPlantToDiet(hazel);
 
-        Omnivore brownbear = new Omnivore("BrownBear", 120, 180, 1.90);
+        Omnivore brownbear = new Omnivore("BrownBear", 120, 1.80, 1.90);
         brownbear.setMaxFoodSize(2);
         brownbear.addPlantToDiet(burr);
 
-        Omnivore coyote = new Omnivore("Coyote", 60, 80, 1.40);
+        Omnivore coyote = new Omnivore("Coyote", 60, 0.80, 1.40);
         coyote.setMaxFoodSize(1);
         coyote.addPlantToDiet(nettle);
 
@@ -94,6 +94,7 @@ public class ForestBookApp {
 
         System.out.println(" ");
 
+        //sorted list by name
         System.out.println("Sorted by name: ");
         forestNotebook.sortAnimalsByName();
         forestNotebook.sortPlantsByName();
@@ -101,7 +102,11 @@ public class ForestBookApp {
 
         System.out.println(" ");
 
+        //sorted list by height
         System.out.println("Sorted by height: ");
+        forestNotebook.sortAnimalsByHeight();
+        forestNotebook.sortPlantsByHeight();
+        forestNotebook.printNoteBook();
 
 
 

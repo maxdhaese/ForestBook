@@ -37,6 +37,6 @@ public class Herbivore extends Animal {
 
     @Override
     public String toString() {
-        return "Herbivore: " + getName() + " Properties: -height: " + getHeight() + " weight: " + getWeight() + " length: " + getLength() + "\n\t\t PlantDiet: " + getPlantDiet();
+        return "Herbivore: " + getName() + " Properties: -height: " + getHeight() + "m weight: " + getWeight() + "kg length: " + getLength() + "\n\t\t PlantDiet: " + getPlantDiet();
     }
 }
