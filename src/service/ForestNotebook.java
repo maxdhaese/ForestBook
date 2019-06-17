@@ -72,16 +72,20 @@ public class ForestNotebook {
         }
 
     }
+    //check for duplicates with an isPresent method
+    private boolean isPresent(Animal animal){
+        for (Animal given : animals){
+            if (given.getName().equalsIgnoreCase(animal.getName())){
+                return true;
+            }
+        }
+        return false;
+    }
 
 
     //add a plant to plant list and a plant to plantCount
     public void addPlant(Plant plant){
-        if (plant != null){
-            if (this.plants.indexOf(plant) == -1){
-                this.plants.add(plant);
-                plantCount = plants.size();
-            }
-        }
+        plants.add(plant);
 
     }
     //iterate through the lists and print them
@@ -93,6 +97,7 @@ public class ForestNotebook {
 
     }
 
+    //use streams to sort the lists
     public void sortAnimalsByName(){
         this.animals.sort(Comparator.comparing(Animal::getName));
 
